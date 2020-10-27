@@ -31,7 +31,7 @@ class UserController extends Controller
             'username'=> ['required', 'string', 'max:255','alpha_dash'],
             'name'=> ['required', 'string', 'max:255'],
             'email'=> ['required', 'email', 'max:255'],
-            'avatar'=> ['file']
+            'avatar'=> ['file'],
 
         ]);
 

@@ -14,15 +14,15 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered" id="users-table" width="100%" cellspacing="0">
                         <thead>
                         <tr>
                             <th>Id</th>
                             <th>Username</th>
                             <th>Avatar</th>
                             <th>Name</th>
-                            <th>Registered date</th>
-                            <th>Updated profile date</th>
+                            <th>Registered Date</th>
+                            <th>Updated profile Date</th>
                             <td>Delete</td>
                         </tr>
 
@@ -33,8 +33,8 @@
                             <th>Username</th>
                             <th>Avatar</th>
                             <th>Name</th>
-                            <th>Registered date</th>
-                            <th>Updated profile date</th>
+                            <th>Registered Date</th>
+                            <th>Updated Profile Date</th>
                             <td>Delete</td>
                         </tr>
                         </tfoot>
