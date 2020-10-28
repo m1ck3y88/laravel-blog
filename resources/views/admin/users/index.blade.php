@@ -14,7 +14,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="users-table" width="100%" cellspacing="0">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                         <tr>
                             <th>Id</th>
@@ -79,7 +79,7 @@
             <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
 
             <!-- Page level custom scripts -->
-                 <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
+                 {{-- <script src="{{asset('js/demo/datatables-demo.js')}}"></script> --}}
         @endsection
 
 </x-admin-master>
