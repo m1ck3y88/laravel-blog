@@ -118,7 +118,7 @@
                 <div class="col-sm-12">
                         <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Users</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Roles</h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -167,12 +167,25 @@
                                                 <td>{{$role->slug}}</td>
                                                 <td>
                                                         
-                                                        <form method="post" action="{{route('')}}">
+                                                        <form method="post" action="{{route('user.role.attach', $user->id)}}">
                                                                 @method('PUT')
                                                                 @csrf
 
-                                                                <button class="btn btn-primary">Attach</button>
+                                                        <input type="hidden" name="role" value="{{$role->id}}">
 
+                                                         <button type="submit" 
+                                                                 class="btn btn-primary"
+                                                                 
+                                                                 @if ($user->roles->contains($role))
+                                                                             disabled
+                                                                 @endif
+                                                                 
+                                                                 >
+
+                                                                 
+                                                                Attach
+
+                                                         </button>
 
                                                         </form>
                                                         
@@ -182,7 +195,37 @@
                                                 
                                                 
                                                 </td>
-                                                <td><button class="btn btn-danger">Detach</button></td>
+                                                <td>
+                                                        
+                                                        <form method="post" action="{{route('user.role.detach', $user)}}">
+                                                                @method('PUT')
+                                                                @csrf
+
+                                                        <input type="hidden" name="role" value="{{$role->id}}">
+
+                                                        <button type="submit"
+                                                                class="btn btn-danger"
+                                                        
+                                                        
+                                                                @if (!$user->roles->contains($role))
+                                                                            disabled
+
+                                                                @endif
+                                                        
+                                                        
+                                                                >
+                
+                                                                
+                                                                Detach
+                                                        
+                                                        
+                                                        
+                                                        </button>
+                                                
+                                                        </form>
+                                                
+                                                
+                                                </td>
                                             </tr>
                                                 @endforeach
                     

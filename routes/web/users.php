@@ -1,20 +1,22 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 
+Route::get('/users/{user}/profile', 'UserController@show')->name('user.profile.show');
 
-Route::get('admin/users/{user}/profile', 'UserController@show')->name('user.profile.show');
+Route::put('/users/{user}/update', 'UserController@update')->name('user.profile.update');
 
-Route::put('admin/users/{user}/update', 'UserController@update')->name('user.profile.update');
-
-Route::delete('admin/users/{user}/destroy', 'UserController@destroy')->name('user.destroy');
+Route::delete('/users/{user}/destroy', 'UserController@destroy')->name('user.destroy');
 
 Route::middleware(['role:admin','auth'])->group(function(){
 
-    Route::get('admin/users', 'UserController@index')->name('users.index');
+    Route::get('/users', 'UserController@index')->name('users.index');
+
+    Route::put('/users/{user}/attach', 'UserController@attach')->name('user.role.attach');
+
+    Route::put('/users/{user}/detach', 'UserController@detach')->name('user.role.detach');
 });
 
 Route::middleware(['can:view,user'])->group(function(){
-    Route::get('admin/users/{user}/profile', 'UserController@show')->name('user.profile.show');
+    Route::get('/users/{user}/profile', 'UserController@show')->name('user.profile.show');
 
 });
