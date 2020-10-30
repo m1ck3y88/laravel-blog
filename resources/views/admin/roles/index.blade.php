@@ -18,9 +18,10 @@
                         <div class="form-group">
                                 <label for="name">Name</label>
                                 <input 
-                                type="text" 
-                                id="name" 
-                                class="form-control @error('name') is-invalid @enderror">
+                                        type="text"
+                                        name="name"
+                                        id="name" 
+                                        class="form-control @error('name') is-invalid @enderror">
 
                                 <div>
                                     @error('name')
